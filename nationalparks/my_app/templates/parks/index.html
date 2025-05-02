@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% load static %} {% block head %}
+<link
+  rel="stylesheet"
+  href="{% static 'css/parks/park-index.css' %}"
+/>
+{% endblock %} {% block content %}
+
+<section class="page-header">
+  <h1>Park List</h1>
+</section>
+
+<section class="card-container">
+  {% for park in parks %}
+  <div class="card">
+    <div class="card-content">
+      <div class="card-img-container">
+        <img
+          src="{% static 'images/park-image.jpg' %}"
+          alt="National Park"
+        />
+      </div>
+      <h2 class="card-title">{{ park.name }}</h2>
+      <h3>{{ park.location }}</h3>
+      <p><small>{{ park.description }}</small></p>
+    </div>
+  </div>
+  {% endfor %}
+</section>
+
+{% endblock %}

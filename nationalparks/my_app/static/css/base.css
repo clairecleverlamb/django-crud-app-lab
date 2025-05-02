@@ -1,0 +1,114 @@
+/* ==== CSS Reset + Base Styles ==== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%; /* 10px = 1rem */
+  --primary-color: #4caf50;
+  --accent-color: #0077b6;
+  --text-color: #222;
+  --bg-light: #f9f9f9;
+  --nav-bg: rgba(104, 197, 248, 0.8);
+  --nav-bg-blur: rgba(104, 197, 248, 0.5);
+  --nav-border: 2px solid #2474f8;
+  --logo-height: 12px;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--bg-light);
+  color: var(--text-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==== Header Styles ==== */
+header {
+  position: sticky;
+  top: 0;
+  background: var(--nav-bg);
+  border-bottom: var(--nav-border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+/* ==== Logo Container ==== */
+.header-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.header-logo-container img {
+    height: 36px;
+    max-height: 36px;
+    width: auto;
+    max-width: 100%;
+    display: block;
+    object-fit: contain;
+  }
+  
+/* ==== Navigation ==== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* ==== Main Content ==== */
+main {
+  padding: 2rem;
+  flex-grow: 1;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ==== Footer (Optional) ==== */
+footer {
+  text-align: center;
+  font-size: 1.4rem;
+  padding: 1.5rem 0;
+  background-color: #eee;
+  color: #555;
+}
+
+/* ==== Responsive Design ==== */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-logo-container {
+    margin-bottom: 1rem;
+  }
+}
+ 
